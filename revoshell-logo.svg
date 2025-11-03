@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120">
+  <defs>
+    <linearGradient id="revoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8e53;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shellGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#44a3d5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Terminal (centralized and larger) -->
+  <rect x="50" y="25" width="60" height="40" rx="5" fill="none" stroke="url(#shellGrad)" stroke-width="3"/>
+  <path d="M 62 42 L 72 47 L 62 52" fill="none" stroke="#4ecdc4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="78" y1="47" x2="95" y2="47" stroke="#4ecdc4" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Text with different colors -->
+  <text x="80" y="95" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle">
+    <tspan fill="url(#revoGrad)">Revo</tspan><tspan fill="url(#shellGrad)">Shell</tspan>
+  </text>
+</svg>

@@ -1,0 +1,46 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: none
+  enable:
+    - copyloopvar
+    - dupword
+    - errcheck
+    - exptostd
+    - fatcontext
+    - gocritic
+    - godot
+    - goheader
+    - staticcheck
+    - govet
+    - iface
+    - ineffassign
+    - intrange
+    - mirror
+    - nakedret
+    - nlreturn
+    - nolintlint
+    - perfsprint
+    - tagalign
+    - unused
+    - usestdlibvars
+    - usetesting
+    - whitespace
+    - wsl_v5
+formatters:
+  enable:
+    - gci
+  settings:
+    gci:
+      sections:
+        - standard
+        - default
+        - prefix(github.com/atilarec/dawa-agent)
+        - blank
+        - dot
+        - alias
+        - localmodule
+      custom-order: true

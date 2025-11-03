@@ -1,0 +1,154 @@
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+    - go mod download
+
+builds:
+  - id: revoshell
+    binary: revoshell
+    main: ./main.go
+
+    env:
+      - CGO_ENABLED=0
+
+    goos:
+      - linux
+      - darwin
+      - freebsd
+      - openbsd
+      - netbsd
+
+    goarch:
+      - amd64
+      - arm64
+      - arm
+      - "386"
+
+    goarm:
+      - "6"
+      - "7"
+
+    ignore:
+      - goos: darwin
+        goarch: "386"
+      - goos: darwin
+        goarch: arm
+      - goos: freebsd
+        goarch: arm64
+      - goos: openbsd
+        goarch: arm64
+      - goos: netbsd
+        goarch: arm64
+
+    ldflags:
+      - -s -w
+      - -X github.com/danielgaits/revoshell/pkg/version.Version={{.Version}}
+      - -X github.com/danielgaits/revoshell/pkg/version.GitCommit={{.ShortCommit}}
+      - -X github.com/danielgaits/revoshell/pkg/version.BuildDate={{.Date}}
+
+archives:
+  - id: revoshell-archive
+    format: tar.gz
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
+
+    format_overrides:
+      - goos: darwin
+        format: zip
+
+    files:
+      - LICENSE*
+      - README*
+      - config.yaml.example
+
+checksum:
+  name_template: 'checksums.txt'
+  algorithm: sha256
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  use: github
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^chore:'
+      - 'merge conflict'
+      - Merge pull request
+      - Merge remote-tracking branch
+      - Merge branch
+  groups:
+    - title: 'New Features'
+      regexp: "^.*feat[(\\w)]*:+.*$"
+      order: 0
+    - title: 'Bug Fixes'
+      regexp: "^.*fix[(\\w)]*:+.*$"
+      order: 1
+    - title: 'Performance Improvements'
+      regexp: "^.*perf[(\\w)]*:+.*$"
+      order: 2
+    - title: 'Security Updates'
+      regexp: "^.*sec[(\\w)]*:+.*$"
+      order: 3
+    - title: 'Documentation Updates'
+      regexp: "^.*docs[(\\w)]*:+.*$"
+      order: 4
+    - title: 'Other Changes'
+      order: 999
+
+release:
+  github:
+    owner: danielgaits
+    name: revoshell
+
+  draft: false
+  prerelease: auto
+  mode: replace
+
+  header: |
+    ## RevoShell {{ .Tag }} Release
+
+    A secure reverse-shell orchestration hub for managing remote devices.
+
+    ### Installation
+
+    Download the appropriate binary for your system below, extract it, and move it to your PATH.
+
+    **Quick install on Linux/macOS:**
+    ```bash
+    # Download and extract (replace VERSION, OS, and ARCH)
+    curl -L https://github.com/danielgaits/revoshell/releases/download/{{ .Tag }}/revoshell_{{ .Tag }}_OS_ARCH.tar.gz | tar xz
+
+    # Move to PATH
+    sudo mv revoshell /usr/local/bin/
+    sudo chmod +x /usr/local/bin/revoshell
+
+    # Verify installation
+    revoshell --version
+    ```
+
+  footer: |
+    ---
+
+    **Full Changelog**: https://github.com/danielgaits/revoshell/compare/{{ .PreviousTag }}...{{ .Tag }}
+
+    ### Checksums
+
+    All binaries are checksummed for verification. Download `checksums.txt` and verify with:
+    ```bash
+    sha256sum -c checksums.txt
+    ```
+
+announce:
+  skip: true

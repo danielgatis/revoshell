@@ -1,0 +1,54 @@
+# RevoShell Configuration File
+# Place this file in one of the following locations:
+#   - ./config.yaml (current directory)
+#   - ~/.revossh/config.yaml (user home directory)
+#   - /etc/revossh/config.yaml (system-wide)
+#   - $XDG_CONFIG_HOME/revossh/config.yaml
+
+# Server configuration
+server:
+  addr: "localhost:8080"  # Address to listen on (host:port)
+  security_key: ""  # Leave empty to disable authentication
+  tls: false
+  tls_cert: ""
+  tls_key: ""
+
+# Agent configuration
+agent:
+  server: "ws://localhost:8080/ws"
+  id: ""  # Leave empty to use machine ID
+  security_key: ""
+  tls_insecure: false
+
+# Connect command configuration
+connect:
+  server: "ws://localhost:8080/ws"
+  security_key: ""
+  shell: "/bin/bash"  # Default shell to use
+
+# Upload command configuration
+upload:
+  server: "ws://localhost:8080/ws"
+  security_key: ""
+  mode: 0644  # Default file permissions (octal)
+
+# Download command configuration
+download:
+  server: "ws://localhost:8080/ws"
+  security_key: ""
+  output: ""  # Default output path (empty = use remote filename)
+
+# Devices command configuration
+devices:
+  server: "ws://localhost:8080/ws"
+  security_key: ""
+
+# Sessions command configuration
+sessions:
+  server: "ws://localhost:8080/ws"
+  security_key: ""
+
+# Disconnect command configuration
+disconnect:
+  server: "ws://localhost:8080/ws"
+  security_key: ""

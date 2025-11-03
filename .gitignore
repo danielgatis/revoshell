@@ -1,0 +1,33 @@
+# Binários
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Testes
+*.test
+*.out
+coverage.txt
+
+# Go
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# GoReleaser
+dist/
+*.tar.gz
+*.zip
+
+# Config
+config.yaml
