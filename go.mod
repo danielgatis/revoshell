@@ -1,4 +1,4 @@
-module github.com/danielgaits/revoshell
+module github.com/danielgatis/revoshell
 
 go 1.24.1
 

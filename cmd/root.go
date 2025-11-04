@@ -6,16 +6,16 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/danielgaits/revoshell/cmd/agent"
-	"github.com/danielgaits/revoshell/cmd/connect"
-	"github.com/danielgaits/revoshell/cmd/devices"
-	"github.com/danielgaits/revoshell/cmd/disconnect"
-	"github.com/danielgaits/revoshell/cmd/download"
-	"github.com/danielgaits/revoshell/cmd/server"
-	"github.com/danielgaits/revoshell/cmd/sessions"
-	"github.com/danielgaits/revoshell/cmd/upload"
-	"github.com/danielgaits/revoshell/pkg/config"
-	"github.com/danielgaits/revoshell/pkg/version"
+	"github.com/danielgatis/revoshell/cmd/agent"
+	"github.com/danielgatis/revoshell/cmd/connect"
+	"github.com/danielgatis/revoshell/cmd/devices"
+	"github.com/danielgatis/revoshell/cmd/disconnect"
+	"github.com/danielgatis/revoshell/cmd/download"
+	"github.com/danielgatis/revoshell/cmd/server"
+	"github.com/danielgatis/revoshell/cmd/sessions"
+	"github.com/danielgatis/revoshell/cmd/upload"
+	"github.com/danielgatis/revoshell/pkg/config"
+	"github.com/danielgatis/revoshell/pkg/version"
 )
 
 var (

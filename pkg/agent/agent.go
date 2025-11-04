@@ -12,10 +12,10 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/sourcegraph/jsonrpc2"
 
-	"github.com/danielgaits/revoshell/pkg/logging"
-	"github.com/danielgaits/revoshell/pkg/protocol"
-	"github.com/danielgaits/revoshell/pkg/transport"
-	"github.com/danielgaits/revoshell/pkg/version"
+	"github.com/danielgatis/revoshell/pkg/logging"
+	"github.com/danielgatis/revoshell/pkg/protocol"
+	"github.com/danielgatis/revoshell/pkg/transport"
+	"github.com/danielgatis/revoshell/pkg/version"
 )
 
 var log zerolog.Logger

@@ -44,13 +44,24 @@ builds:
 
     ldflags:
       - -s -w
-      - -X github.com/danielgaits/revoshell/pkg/version.Version={{.Version}}
-      - -X github.com/danielgaits/revoshell/pkg/version.GitCommit={{.ShortCommit}}
-      - -X github.com/danielgaits/revoshell/pkg/version.BuildDate={{.Date}}
+      - -X github.com/danielgatis/revoshell/pkg/version.Version={{.Version}}
+      - -X github.com/danielgatis/revoshell/pkg/version.GitCommit={{.ShortCommit}}
+      - -X github.com/danielgatis/revoshell/pkg/version.BuildDate={{.Date}}
 
 archives:
   - id: revoshell-archive
-    format: tar.gz
+    format_overrides:
+      - goos: darwin
+        format: zip
+      - goos: linux
+        format: tar.gz
+      - goos: freebsd
+        format: tar.gz
+      - goos: openbsd
+        format: tar.gz
+      - goos: netbsd
+        format: tar.gz
+
     name_template: >-
       {{ .ProjectName }}_
       {{- .Version }}_
@@ -59,10 +70,6 @@ archives:
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
-
-    format_overrides:
-      - goos: darwin
-        format: zip
 
     files:
       - LICENSE*
@@ -109,7 +116,7 @@ changelog:
 
 release:
   github:
-    owner: danielgaits
+    owner: danielgatis
     name: revoshell
 
   draft: false
@@ -128,7 +135,7 @@ release:
     **Quick install on Linux/macOS:**
     ```bash
     # Download and extract (replace VERSION, OS, and ARCH)
-    curl -L https://github.com/danielgaits/revoshell/releases/download/{{ .Tag }}/revoshell_{{ .Tag }}_OS_ARCH.tar.gz | tar xz
+    curl -L https://github.com/danielgatis/revoshell/releases/download/{{ .Tag }}/revoshell_{{ .Tag }}_OS_ARCH.tar.gz | tar xz
 
     # Move to PATH
     sudo mv revoshell /usr/local/bin/
@@ -141,7 +148,7 @@ release:
   footer: |
     ---
 
-    **Full Changelog**: https://github.com/danielgaits/revoshell/compare/{{ .PreviousTag }}...{{ .Tag }}
+    **Full Changelog**: https://github.com/danielgatis/revoshell/compare/{{ .PreviousTag }}...{{ .Tag }}
 
     ### Checksums
 

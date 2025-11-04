@@ -4,8 +4,8 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/spf13/cobra"
 
-	"github.com/danielgaits/revoshell/pkg/logging"
-	serverPkg "github.com/danielgaits/revoshell/pkg/server"
+	"github.com/danielgatis/revoshell/pkg/logging"
+	serverPkg "github.com/danielgatis/revoshell/pkg/server"
 )
 
 var (

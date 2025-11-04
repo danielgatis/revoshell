@@ -8,8 +8,8 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/spf13/cobra"
 
-	agentPkg "github.com/danielgaits/revoshell/pkg/agent"
-	"github.com/danielgaits/revoshell/pkg/logging"
+	agentPkg "github.com/danielgatis/revoshell/pkg/agent"
+	"github.com/danielgatis/revoshell/pkg/logging"
 )
 
 var (

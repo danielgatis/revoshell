@@ -76,14 +76,33 @@ RevoShell uses a client-server architecture with three main components:
 
 ## Installation
 
+### Pre-built Binaries
+
+Download the latest release for your platform from the [GitHub Releases](https://github.com/danielgatis/revoshell/releases) page. Pre-compiled binaries are available for:
+
+- Linux (amd64, arm64, arm)
+- macOS (amd64, arm64)
+- Windows (amd64, arm64)
+- FreeBSD (amd64, arm64)
+
+Simply download the archive corresponding to your operating system and architecture, extract it, and move the binary to a location in your PATH:
+
 ```bash
-go install github.com/danielgaits/revoshell@latest
+# Example for Linux/macOS
+tar -xzf revoshell_*.tar.gz
+sudo mv revoshell /usr/local/bin/
 ```
 
-Or build from source:
+### Install via Go
 
 ```bash
-git clone https://github.com/danielgaits/revoshell.git
+go install github.com/danielgatis/revoshell@latest
+```
+
+### Build from Source
+
+```bash
+git clone https://github.com/danielgatis/revoshell.git
 cd revoshell
 make build
 ```

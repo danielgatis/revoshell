@@ -12,7 +12,7 @@ import (
 	"github.com/creack/pty"
 	"github.com/sourcegraph/jsonrpc2"
 
-	"github.com/danielgaits/revoshell/pkg/protocol"
+	"github.com/danielgatis/revoshell/pkg/protocol"
 )
 
 // Handler implements jsonrpc2.Handler to process server commands.

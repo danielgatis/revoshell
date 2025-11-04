@@ -1,6 +1,6 @@
 package main
 
-import "github.com/danielgaits/revoshell/cmd"
+import "github.com/danielgatis/revoshell/cmd"
 
 func main() {
 	cmd.Execute()

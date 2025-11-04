@@ -6,8 +6,8 @@ import (
 
 	"github.com/sourcegraph/jsonrpc2"
 
-	"github.com/danielgaits/revoshell/pkg/protocol"
-	"github.com/danielgaits/revoshell/pkg/version"
+	"github.com/danielgatis/revoshell/pkg/protocol"
+	"github.com/danielgatis/revoshell/pkg/version"
 )
 
 // Handler implements jsonrpc2.Handler to process device messages.

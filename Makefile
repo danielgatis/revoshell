@@ -4,9 +4,9 @@ VERSION ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo "dev
 GIT_COMMIT ?= $(shell git rev-parse --short HEAD 2>/dev/null || echo "unknown")
 BUILD_DATE ?= $(shell date -u '+%Y-%m-%d_%H:%M:%S')
 
-LDFLAGS := -X github.com/danielgaits/revoshell/pkg/version.Version=$(VERSION) \
-           -X github.com/danielgaits/revoshell/pkg/version.GitCommit=$(GIT_COMMIT) \
-           -X github.com/danielgaits/revoshell/pkg/version.BuildDate=$(BUILD_DATE)
+LDFLAGS := -X github.com/danielgatis/revoshell/pkg/version.Version=$(VERSION) \
+           -X github.com/danielgatis/revoshell/pkg/version.GitCommit=$(GIT_COMMIT) \
+           -X github.com/danielgatis/revoshell/pkg/version.BuildDate=$(BUILD_DATE)
 
 build:
 	@echo "Building revoshell..."
