@@ -6,6 +6,21 @@
   <strong>A secure reverse-shell orchestration hub for managing remote devices</strong>
 </p>
 
+<br/>
+<br/>
+<br/>
+
+## Key Features
+
+- **Reverse Connection**: Agents initiate connections to the server, making it work through NAT/firewalls
+- **Persistent Sessions**: Multiple interactive shell sessions can run simultaneously on different agents
+- **Secure Communication**: Optional TLS encryption and authentication via security keys
+- **Real-time Interaction**: Full terminal support with proper PTY handling for interactive commands
+- **File Transfer**: Efficient binary-safe file uploads and downloads with permission preservation
+- **Auto-Reconnection**: Agents automatically reconnect with exponential backoff if disconnected
+
+## How it works
+
 ### Architecture Overview
 
 RevoShell uses a client-server architecture with three main components:
@@ -62,25 +77,11 @@ RevoShell uses a client-server architecture with three main components:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Key Features
-
-- **Reverse Connection**: Agents initiate connections to the server, making it work through NAT/firewalls
-- **Persistent Sessions**: Multiple interactive shell sessions can run simultaneously on different agents
-- **Secure Communication**: Optional TLS encryption and authentication via security keys
-- **Real-time Interaction**: Full terminal support with proper PTY handling for interactive commands
-- **File Transfer**: Efficient binary-safe file uploads and downloads with permission preservation
-- **Auto-Reconnection**: Agents automatically reconnect with exponential backoff if disconnected
-
 ## Installation
 
 ### Pre-built Binaries
 
-Download the latest release for your platform from the [GitHub Releases](https://github.com/danielgatis/revoshell/releases) page. Pre-compiled binaries are available for:
-
-- Linux (amd64, arm64, arm)
-- macOS (amd64, arm64)
-- Windows (amd64, arm64)
-- FreeBSD (amd64, arm64)
+Download the latest release for your platform from the [GitHub Releases](https://github.com/danielgatis/revoshell/releases) page. 
 
 Simply download the archive corresponding to your operating system and architecture, extract it, and move the binary to a location in your PATH:
 
